@@ -1,0 +1,104 @@
+a = input("What college do you want to go to? good or bad? ").strip().lower()
+
+def rob_bank():
+    print("\nSo you robbed a bank and got caught.")
+    print("And the court seized all you had and sentenced you to jail for 20 years.")
+    print("Free housing, food, medical bills for 240 months. The catch?\n"
+          "Say goodbye to campus life and hello to mystery bologna, lukewarm oatmeal, and the worst peers. "
+          "If you want flavour, you're going to have to hustle in the prison yard to earn some instant ramen packets.")
+
+def but_broke():
+    if choice == 1:
+        print("Nobody cared, you died in the cold.")
+    elif choice == 2:
+        rob_bank()
+    elif choice == 3:
+        print("You never got a valid degree and nobody hired you. You started freelancing but couldn't even afford a phone at this point, so you started begging on the streets and died in the cold.")
+    else:
+        print("You couldn't think anymore so you are just broke now")
+
+def bad_college():
+    b = input("\nWhat course will you take? CSE ECE Mech IT DS or others? ").strip()
+    
+    if b in ['ECE', 'IT', 'Mech', 'DS']:
+        try:
+            c = int(input("How much can you pay per year in lakhs? 1?2?3?4?5?6?7?8?9? "))
+        except ValueError:
+            print("You couldn't think anymore so you are just broke now")
+            return
+				if c >= 5:
+            print("But you're broke!")
+            but_broke()
+            
+        elif 2 < c < 5:
+            print("\nNow you'll have to earn money.")
+            try:
+                d = int(input("How many hours of your day will you dedicate? "))
+            except ValueError:
+                print("You couldn't think anymore so you are just broke now")
+                return
+						if d >= 15:
+                print("You died of overworking.")
+            elif d > 3:
+                try:
+                    e = int(input("How many hours will you study? "))
+                    f = int(input("How many hours will you network? "))
+                    g = int(input("How many hours will you create projects? "))
+                except ValueError:
+                    print("You couldn't think anymore so you are just broke now")
+                    return
+								if e + f + g > d or e + f + g <= 3:
+                    print("You had schizophrenia and died.")
+                else:
+                    h = (e + f + g) / 2
+                    print(f"You got a {h} lakh per annum job.")
+                    
+                    if g > e > f and h >= 6:
+                        try:
+                            i = int(input('\nYour boss presented your PPT to the board, what will you do?\n'
+                                          '(1) "Thank you for presenting my idea!"\n'
+                                          '(2) "You\'re welcome, Boss"\n'
+                                          '(3) Smile at your boss\n'
+                                          '(4) Resign\n'
+                                          '(5) Do Nothing\nChoice: '))
+												except ValueError:
+                            print("You couldn't think anymore so you are just broke now")
+                            return
+												if i == 1 or i == 2:
+                            print("Your Boss doesn't like you anymore. You never grew in your career and couldn't handle inflation, so you ended up broke.")
+                        elif i == 4:
+                            print("You lost your job, nobody hired you, so you're broke now.")
+                        elif i == 3:
+                            print("Your boss likes you now.")
+                            nonsense1 = input("Type something to continue... ")
+                            nonsense2 = input("Type one more thing... ")
+                            print("But he never cared anyways. You never upgraded, never got recognition at work so you ended up broke AND depressed.")
+                        elif i == 5:
+                            print("You never upgraded your skills, your boss took all the recognition, and you ended up broke.")
+                        else:
+                            print("You couldn't think anymore so you are just broke now")
+										elif h > 5:
+                        print("You didn't have money to upgrade your skills, lost your job, got sick, and became broke.")
+                    else:
+                        print("You couldn't survive this economy and are broke.")
+						elif d > 0:
+                print("That wasn't enough money so you're just broke now.")
+            else:
+                print("You couldn't think anymore so you are just broke now")
+				else:
+            print("\nThat wasn't enough money to get you a college.")
+            try:
+                choice = int(input("What will you do now?\n(1) Beg on the streets?\n(2) Rob a bank\n(3) Learn from YouTube\nChoice: "))
+            except ValueError:
+                print("You couldn't think anymore so you are just broke now")
+                return
+		else:
+        print("You couldn't think anymore so you are just broke now")
+
+if a == 'good':
+    print("But you're broke!")
+    but_broke()
+elif a == 'bad':
+    bad_college()
+else:
+    print("You couldn't think anymore so you are just broke now")
