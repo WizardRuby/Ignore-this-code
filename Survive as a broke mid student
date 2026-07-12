@@ -19,17 +19,15 @@ def but_broke():
 
 def bad_college():
     b = input("\nWhat course will you take? CSE ECE Mech IT DS or others? ").strip()
-    
     if b in ['ECE', 'IT', 'Mech', 'DS']:
         try:
             c = int(input("How much can you pay per year in lakhs? 1?2?3?4?5?6?7?8?9? "))
         except ValueError:
             print("You couldn't think anymore so you are just broke now")
             return
-				if c >= 5:
+		if c >= 5:
             print("But you're broke!")
             but_broke()
-            
         elif 2 < c < 5:
             print("\nNow you'll have to earn money.")
             try:
@@ -37,7 +35,7 @@ def bad_college():
             except ValueError:
                 print("You couldn't think anymore so you are just broke now")
                 return
-						if d >= 15:
+			if d >= 15:
                 print("You died of overworking.")
             elif d > 3:
                 try:
@@ -47,12 +45,11 @@ def bad_college():
                 except ValueError:
                     print("You couldn't think anymore so you are just broke now")
                     return
-								if e + f + g > d or e + f + g <= 3:
-                    print("You had schizophrenia and died.")
+				if e + f + g > d or e + f + g <= 3:
+                    print("You had schizophrenia and medical costs made you broke.")
                 else:
                     h = (e + f + g) / 2
-                    print(f"You got a {h} lakh per annum job.")
-                    
+                    print("You got a {h} lakh per annum job.")
                     if g > e > f and h >= 6:
                         try:
                             i = int(input('\nYour boss presented your PPT to the board, what will you do?\n'
@@ -61,10 +58,10 @@ def bad_college():
                                           '(3) Smile at your boss\n'
                                           '(4) Resign\n'
                                           '(5) Do Nothing\nChoice: '))
-												except ValueError:
+						except ValueError:
                             print("You couldn't think anymore so you are just broke now")
                             return
-												if i == 1 or i == 2:
+						if i == 1 or i == 2:
                             print("Your Boss doesn't like you anymore. You never grew in your career and couldn't handle inflation, so you ended up broke.")
                         elif i == 4:
                             print("You lost your job, nobody hired you, so you're broke now.")
@@ -81,7 +78,7 @@ def bad_college():
                         print("You didn't have money to upgrade your skills, lost your job, got sick, and became broke.")
                     else:
                         print("You couldn't survive this economy and are broke.")
-						elif d > 0:
+			elif d > 0:
                 print("That wasn't enough money so you're just broke now.")
             else:
                 print("You couldn't think anymore so you are just broke now")
